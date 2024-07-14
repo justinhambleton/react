@@ -1,0 +1,38 @@
+curl --location 'https: //domains-demoecon.ent-sessionm.com/incentives/api/1.0/progress/rule_tree/user_progress' \
+--header 'Content-Type: application/json' \
+--header 'Accept: application/json' \
+--header 'Authorization: Basic U2Vzc2lvbk1TaGFyZWQ6ZzdvYU1sSkR4UjlDRTFYa0duN21SOGlYYUxNdTlGeWQ=' \
+--data '{
+	"retailer_id": "ED0538AD-38AF-422F-8450-21FDF1A0FAE2",
+	"user_id": "2309f17c-4011-11ef-9209-f1fbac110003",
+	"ids": [
+		"c45c9b1b-8859-4012-96b8-4f7159b7d1ac"
+	],
+	"culture": "en-US"
+}'
+
+----- RESPONSE -----
+
+{
+	"status": "ok",
+	"payload": {
+		"rule_trees": [
+			{
+				"id": "c45c9b1b-8859-4012-96b8-4f7159b7d1ac",
+				"name": "VRG - $5 Auto-Issue Reward",
+				"root": {
+					"id": "a9532b3a-cda6-4679-97ba-f8c5a981a86b",
+					"type": "and",
+					"rules": {
+						"77c4fa9c-faed-47e2-b5b7-bd1b89a2b751": {
+							"current": "200.00",
+							"expected": "1000",
+							"comparison": "GreaterThanOrEqual",
+							"template_description": "{\"type\":\"RULE\",\"description\":\"Customer's **Redeemable Points** accounts have **greater than or equal to** **1000** points\",\"children\":[]}"
+						}
+					}
+				}
+			}
+		]
+	}
+}
